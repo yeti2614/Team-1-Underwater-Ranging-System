@@ -48,6 +48,8 @@ def uart_interrupt(interrupt_pin):
     distance = speed_of_sound_75f * val / 2
     print("Distance:", distance)
 
+
+
 #when slave is ready to send data
 interrupt_pin = Pin(16, Pin.IN, Pin.PULL_UP)   
 interrupt_pin.irq(handler=uart_interrupt, trigger=Pin.IRQ_FALLING) #interrupt routine
