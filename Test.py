@@ -2,7 +2,7 @@
 import machine
 from machine import UART, Pin
 import utime
-uart = UART(1, 9600, tx=Pin(4), rx = Pin(5))
+uart = UART(0, 9600, tx=Pin(0), rx = Pin(1))
 led = machine.Pin(25, machine.Pin.OUT) #Define the LED pin
 led.value(True) #LED is turned on to indicate that the system is running
 interrupt_pin = machine.Pin(0, machine.Pin.OUT)

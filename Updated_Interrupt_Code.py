@@ -20,17 +20,17 @@ def communicate(GP):
 
 
 GP = Pin(28, Pin.IN, Pin.PULL_DOWN) #Pin 28 is the tuned to the input and is brought low to wait for an incoming signal
-MS = Pin(21, Pin.IN, Pin.PULL_UP) #Pin 28 is the tuned to the input and is brought low to wait for an incoming signal
+#MS = Pin(21, Pin.IN, Pin.PULL_UP) #Pin 28 is the tuned to the input and is brought low to wait for an incoming signal
 
 led = machine.Pin(25, machine.Pin.OUT) #Define the LED pin
 led.value(True) #LED is turned on to indicate that the system is running
 
 GP.irq(handler=communicate, trigger=Pin.IRQ_RISING) #interrupt routine
-MS.irq(handler=MS_signal, trigger=Pin.IRQ_RISING)
+#MS.irq(handler=MS_signal, trigger=Pin.IRQ_RISING)
 
 while True:
     utime.sleep(100)
 #    print('Waiting for an incoming signal...')
 
-SPI.send(1234, timeout = 5000)
+#SPI.send(1234, timeout = 5000)
     
